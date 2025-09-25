@@ -1,0 +1,38 @@
+---
+services:
+  piwigo:
+    image: lscr.io/linuxserver/piwigo:latest
+    container_name: piwigo
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /home/atif/docker/config:/config
+      - /home/atif/docker/gallery:/gallery
+    ports:
+      - 8080:80
+    restart: unless-stopped
+
+
+
+---
+services:
+  mariadb:
+    image: lscr.io/linuxserver/mariadb:latest
+    container_name: mariadb
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - MYSQL_ROOT_PASSWORD=abc123
+      - MYSQL_DATABASE=testDB
+      - MYSQL_USER=testuser
+      - MYSQL_PASSWORD=abc123
+      
+    volumes:
+      - /home/atif/docker/mariadb_config:/config
+    ports:
+      - 3306:3306
+    restart: unless-stopped
+
