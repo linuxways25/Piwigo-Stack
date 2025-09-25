@@ -25,10 +25,10 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - MYSQL_ROOT_PASSWORD=abc123
+      - MYSQL_ROOT_PASSWORD=********
       - MYSQL_DATABASE=testDB
       - MYSQL_USER=testuser
-      - MYSQL_PASSWORD=abc123
+      - MYSQL_PASSWORD=********
       
     volumes:
       - /home/atif/docker/mariadb_config:/config
