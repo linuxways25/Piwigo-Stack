@@ -1,7 +1,7 @@
 ---
 services:
   piwigo:
-    image: lscr.io/linuxserver/piwigo:15.6.0
+    image: lscr.io/linuxserver/piwigo:16.4.0
     container_name: piwigo
     environment:
       - PUID=1000
