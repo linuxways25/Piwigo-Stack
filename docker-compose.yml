@@ -16,6 +16,8 @@ services:
 
 
 
+
+
 ---
 services:
   mariadb:
@@ -26,7 +28,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - MYSQL_ROOT_PASSWORD=********
-      - MYSQL_DATABASE=testDB
+      - MYSQL_DATABASE=DB
       - MYSQL_USER=testuser
       - MYSQL_PASSWORD=********
       
