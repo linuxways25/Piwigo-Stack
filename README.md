@@ -10,3 +10,15 @@ Nginx Proxy: Handles incoming web traffic, manages SSL/TLS termination (optional
 MariaDB Database: High-performance relational database storage for photo metadata, user accounts, and configurations.
 
 Redis Cache (Planned): In-memory data store to be integrated in future releases for session handling and database query caching to speed up high-traffic instances.
+
+📁 Project Directory Structure
+piwigo-stack/
+├── docker-compose.yml
+├── .env                    # System hidden folder which stores passwords and environment vars
+├── gallery/                # Your local photo & media library folder
+├── piwigo-config/         # Custom database configs (e.g., custom.cnf)
+├── mariadb-config/          # <-- Your local Piwigo configuration overrides & DB credentials
+├── nginx/
+│   └── default.conf        # Reverse proxy routing rules
+└── redis/
+    └── redis.conf          # Custom Redis configurations (optional)
