@@ -23,3 +23,19 @@ piwigo-stack/
 │   └── default.conf        # Reverse proxy routing rules
 └── redis/
     └── redis.conf          # Custom Redis configurations (optional)
+
+🛠️ Technology Stack: 
+This project implements a multi-container architecture using a modern, high-performance web-serving stack:
+
+Core Application Layer| Piwigo (Latest): The open-source, PHP-based photo gallery application engine managing user sessions, albums, permissions, and media plugins.
+PHP-FPM: Handles fast dynamic server-side processing for the Piwigo backend inside the application layer.  
+
+Infrastructure & Orchestration|
+Docker: Used to containerize each architectural component into isolated, reproducible, lightweight environments.
+Docker Compose: Orchestrates multi-container execution, managing service networking, persistent volumes, environment variables, and startup sequences.
+
+Performance & Routing (Reverse Proxy)| Nginx: Serving as an edge reverse proxy and web server. It handles incoming traffic, manages secure SSL/TLS termination, and directly caches static image payloads to reduce application load.  
+
+Storage & Caching Layer|
+MariaDB: A relational SQL database system used to store and manage critical metadata, gallery configurations, user tables, and tags.
+Redis: An in-memory, key-value data store utilized for object caching, helping speed up recurring database queries and accelerating album load times.  
