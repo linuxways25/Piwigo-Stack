@@ -11,6 +11,7 @@ MariaDB Database: High-performance relational database storage for photo metadat
 
 Redis Cache (Planned): In-memory data store to be integrated in future releases for session handling and database query caching to speed up high-traffic instances.
 
+
 📁 Project Directory Structure
 piwigo-stack/
 ├── docker-compose.yml
