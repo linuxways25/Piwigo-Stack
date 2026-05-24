@@ -47,6 +47,7 @@ services:
       - /home/atif/piwigo/mariadb-config:/config
     ports:
       - 3306:3306
+restart: unless-stopped
 
 ---
 services:
@@ -57,5 +58,4 @@ services:
     volumes:
       - ./redis-data:/data
     restart: unless-stopped
-    restart: unless-stopped
-
+    
