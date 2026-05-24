@@ -47,5 +47,15 @@ services:
       - /home/atif/piwigo/mariadb-config:/config
     ports:
       - 3306:3306
+
+---
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    command: redis-server --appendonly yes
+    volumes:
+      - ./redis-data:/data
+    restart: unless-stopped
     restart: unless-stopped
 
