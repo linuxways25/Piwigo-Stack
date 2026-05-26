@@ -9,7 +9,7 @@ Nginx Proxy: Handles incoming web traffic, manages SSL/TLS termination (optional
 
 MariaDB Database: High-performance relational database storage for photo metadata, user accounts, and configurations.
 
-Redis Cache (Planned): In-memory data store to be integrated in future releases for session handling and database query caching to speed up high-traffic instances.
+Redis Cache: In-memory data store to be integrated in future releases for session handling and database query caching to speed up high-traffic instances.
 
 
 **📁 Project Directory Structure**
