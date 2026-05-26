@@ -14,15 +14,37 @@ Redis Cache (Planned): In-memory data store to be integrated in future releases 
 
 **📁 Project Directory Structure**
 piwigo-stack/
+│
 ├── docker-compose.yml
-├── .env                    # System hidden folder which stores passwords and environment vars
-├── gallery/                # Your local photo & media library folder
-├── piwigo-config/         # Custom database configs (e.g., custom.cnf)
-├── mariadb-config/          # <-- Your local Piwigo configuration overrides & DB credentials
+├── .env
+│
+├── gallery/                    # Photo & media library storage
+│
+├── piwigo-config/              # Piwigo custom configs & overrides
+│
+├── mariadb-config/             # MariaDB custom configs (custom.cnf)
+│
 ├── nginx/
-│   └── default.conf        # Reverse proxy routing rules
-└── redis/
-    └── redis.conf          # Custom Redis configurations (optional)
+│   └── default.conf            # Reverse proxy configuration
+│
+├── redis/
+│   └── redis.conf              # Redis tuning & cache configs
+│
+├── prometheus/
+│   └── prometheus.yml          # Prometheus scrape configuration
+│
+├── grafana/
+│   ├── provisioning/
+│   └── dashboards/
+│
+├── monitoring/
+│   ├── cadvisor/
+│   └── node-exporter/
+│
+└── logs/
+    ├── nginx/
+    ├── piwigo/
+    └── prometheus/
 
 **🛠️ Technology Stack:** 
 This project implements a multi-container architecture using a modern, high-performance web-serving stack:
@@ -65,10 +87,10 @@ Docker Networks	    Secure container communication
 **📊 Monitoring & Observability Stack**
 
 Component	              Role
-Prometheus	        Metrics collection & scraping
-Grafana	            Dashboards & visualization
-Node Exporter	    Linux host metrics
-cAdvisor	        Docker container metrics
+Prometheus:	        Metrics collection & scraping
+Grafana:	            Dashboards & visualization
+Node Exporter:	    Linux host metrics
+cAdvisor:	        Docker container metrics
 
 
 **🌐 Recommended Docker Networks**
@@ -77,6 +99,6 @@ I have created a separate monitoring network that is a very good production-styl
 
 **Suggested Networks**
     Network	                            Purpose
-piwigo-network	            App containers communication
-monitoring-network	        Monitoring stack communication
+piwigo-network: 	            App containers communication
+monitoring-network: 	        Monitoring stack communication
 
