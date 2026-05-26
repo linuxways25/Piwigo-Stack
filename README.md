@@ -77,12 +77,12 @@ This setup gives you:
 
 **Core Application Stack**
 
-Container	              Purpose
-Piwigo	            Photo management application
-MariaDB	            Database backend
-Redis               Cache/session acceleration
-NGINX               Reverse proxy
-Docker Networks	    Secure container communication
+Containers	                   Purpose
+Piwigo:	                Photo management application
+MariaDB:	            Database backend
+Redis:                  Cache/session acceleration
+NGINX:                  Reverse proxy
+Docker Networks:	    Secure container communication
 
 **📊 Monitoring & Observability Stack**
 
