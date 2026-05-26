@@ -1,6 +1,6 @@
 This repository contains the multi-container configuration for deploying Piwigo, an open-source photo gallery software, using Docker Compose. The stack is architected to run Piwigo behind an Nginx reverse proxy with a MariaDB backend database, engineered for high performance and isolation.
 
-🏗️ Architecture Overview
+**🏗️ Architecture Overview**
 The application environment is split into distinct, isolated services:
 
 Piwigo Application: The core PHP-driven photo gallery engine.
@@ -12,7 +12,7 @@ MariaDB Database: High-performance relational database storage for photo metadat
 Redis Cache (Planned): In-memory data store to be integrated in future releases for session handling and database query caching to speed up high-traffic instances.
 
 
-📁 Project Directory Structure
+**📁 Project Directory Structure**
 piwigo-stack/
 ├── docker-compose.yml
 ├── .env                    # System hidden folder which stores passwords and environment vars
@@ -24,7 +24,7 @@ piwigo-stack/
 └── redis/
     └── redis.conf          # Custom Redis configurations (optional)
 
-🛠️ Technology Stack: 
+**🛠️ Technology Stack:** 
 This project implements a multi-container architecture using a modern, high-performance web-serving stack:
 
 Core Application Layer| Piwigo (Latest): The open-source, PHP-based photo gallery application engine managing user sessions, albums, permissions, and media plugins.
@@ -39,3 +39,44 @@ Performance & Routing (Reverse Proxy)| Nginx: Serving as an edge reverse proxy a
 Storage & Caching Layer|
 MariaDB: A relational SQL database system used to store and manage critical metadata, gallery configurations, user tables, and tags.
 Redis: An in-memory, key-value data store utilized for object caching, helping speed up recurring database queries and accelerating album load times.  
+
+**Monitoring & Observability Stack**
+
+Piwigo environment can become much more production-ready by integrating a complete monitoring and observability stack.
+
+This setup gives you:
+
+📊 Real-time metrics
+📦 Container monitoring
+🖥️ Server monitoring
+🚨 Alerting capability
+📈 Beautiful dashboards
+🔍 Better troubleshooting visibility
+
+**Core Application Stack**
+
+Container	              Purpose
+Piwigo	            Photo management application
+MariaDB	            Database backend
+Redis               Cache/session acceleration
+NGINX               Reverse proxy
+Docker Networks	    Secure container communication
+
+**📊 Monitoring & Observability Stack**
+
+Component	              Role
+Prometheus	        Metrics collection & scraping
+Grafana	            Dashboards & visualization
+Node Exporter	    Linux host metrics
+cAdvisor	        Docker container metrics
+
+
+**🌐 Recommended Docker Networks**
+
+I have created a separate monitoring network that is a very good production-style approach.
+
+**Suggested Networks**
+    Network	                            Purpose
+piwigo-network	            App containers communication
+monitoring-network	        Monitoring stack communication
+
